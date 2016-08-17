@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link rel='stylesheet' href='/stylesheets/style.css' />
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+      <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+      <!-- Latest compiled and minified CSS -->
+      <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+      <!-- jQuery library -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <!-- Latest compiled JavaScript -->
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="/css/homepage.css">
+      <script type="text/javascript" src="/angularjs/homepage.js"></script>
+   </head>
+   <body ng-app="facebook" ng-controller="homepage" class="body">
+      <div class="container-fluid">
+         <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+               <div class="navbar-header">
+                  <a class="navbar-brand" href="#"><b>Facebook</b></a>
+                  <form class="navbar-form navbar-left">
+                     <div class="form-group">
+                        <span class="glyphicon glyphicon-search">
+                        <input type="text" class="form-control" placeholder="Search" id="searchbox" data-ng-model="search">
+       					</span>
+                        <script>
+                           $("#searchbox").keyup(function(event){
+                           if(event.keyCode == 13){
+                           searchuser();
+                           }
+                           });
+                        </script>
+                        <button type="submit" class="btn btn-default" data-ng-click="searchuser();" data-ng-show="false">Submit</button>
+                        <div id="display"></div>
+                     </div>
+                     <!--<button type="submit" class="btn btn-success">Submit</button>  --> 
+                  </form>
+               </div>
+               <div>
+                  <ul class="nav navbar-nav navbar-right ">
+                     <li><a href="/homepage"><span class="glyphicon glyphicon-home"></span class="navbartitles">&nbsp;Home</a></li>
+                     <li><a href="/friends"><span class="glyphicon glyphicon-user"></span class="navbartitles">&nbsp;Friends</a></li>
+                     <li><a href="/groups"><span class="glyphicon glyphicon-th-large"></span>&nbsp;Groups</a></li>
+                     <li><a href="/signout"><img src="/fbLogout.png"></a></li>
+                  </ul>
+               </div>
+            </div>
+         </nav>
+         <div class="col-md-2">
+            <div class="sidebar">
+               <br>
+               <a class="navigationbarlinks" href="/editAbout"><b>About yourself</b></a><br><br>
+               <a class="navigationbarlinks" href="/interest"><b>Interests</b></a><br><br>
+            </div>
+         </div>
+         <div class="col-md-8">
+            <div class="newsfeed_background">
+               <div class="row">
+                  <div class="col-md-12">
+                     <form class="facebook-share-box" name="statusForm">
+                        <div class="share">
+                           <div class="panel panel-default">
+                              <div class="panel-heading"> Update Status</div>
+                              <div class="panel-body">
+                                 <div class="">
+                                    <textarea name="message" cols="40" rows="10" id="status_message" class="form-control message" style="height: 62px; overflow: hidden;" placeholder="What's on your mind ?" ng-model="currentStatus">{{newStatus}}</textarea> 
+                                 </div>
+                              </div>
+                              <div class="panel-footer">
+                                 <div class="row">
+                                    <div class="col-md-12 col-md-offset-10">
+                                       <div class="form-group">                                 
+                                          <input type="submit" name="submit" value="Post" class="uibutton confirm facebookButtonSmall" ng-click="postStatus()">                               
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                  </form>
+               </div>
+            </div>
+            
+            <table class="table table-striped">
+                     <tbody>
+                        <tr ng-repeat="status in statuses">
+                           <td style="padding-left:5%;">
+                              <span class="facebookFont">{{ status.userName }}<br> {{ status.status }}</span>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+            
+         </div>
+         
+         
+         
+      </div>
+      <div class="col-md-2">
+         <div class="sidebar" position:absolute>
+            <br><img src="/abcd1.png"></img>
+         </div>
+      </div>
+      </div>
+   </body>
+</html>

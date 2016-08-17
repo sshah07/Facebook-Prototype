@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link rel='stylesheet' href='/stylesheets/style.css' />
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+      <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+      <!-- Latest compiled and minified CSS -->
+      <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+      <!-- jQuery library -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <!-- Latest compiled JavaScript -->
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="/angularjs/editabout.js"></script>
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="/css/homepage.css">
+      <link rel="stylesheet" type="text/css" href="/css/editAbout.css">
+   </head>
+   <body ng-app="facebook" data-ng-controller="aboutController" class="body">
+      <div class="container">
+         <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+               <div class="navbar-header">
+                  <a class="navbar-brand" href="#"><b>Facebook</b></a>
+                  
+               </div>
+               <div>
+                  <ul class="nav navbar-nav navbar-right ">
+                     <li><a href="/homepage"><span class="glyphicon glyphicon-home"></span class="navbartitles">&nbsp;Home</a></li>
+                     <li><a href="/friends"><span class="glyphicon glyphicon-user"></span class="navbartitles">&nbsp;Friends</a></li>
+                     <li><a href="/groups"><span class="glyphicon glyphicon-th-large"></span>&nbsp;Groups</a></li>
+                     <li><a href="/signout"><img src="/fbLogout.png"></a></li>
+                  </ul>
+               </div>
+            </div>
+         </nav>
+         <div class="col-md-2">
+            <div class="sidebar">
+               <a class="navigationbarlinks" href="/editAbout"><b>About yourself</b></a><br><br>
+               <a class="navigationbarlinks" href="/interest"><b>Interests</b></a><br><br>
+            </div>
+         </div>
+         <div class="col-md-8">
+            <div class="newsfeed_background">
+               <div class="newsfeed_container">
+                  <form class="edit_about_form">
+                     <span class="aboutHeader">Information</span><br>
+                     <hr class="partition">
+                     <div class="form-group">
+                        <input type="name" class="form-control" id="name" placeholder="Name" data-ng-model="name">
+                     </div>
+                     <div class="form-group">
+                        <input type="dob" class="form-control" id="dob" placeholder="Date of birth" data-ng-model="dob">
+                     </div>
+                     <div class="form-group">
+                        <input type="hometown" class="form-control" id="hometown" placeholder="Hometown" data-ng-model="hometown">
+                     </div>
+                     <div class="form-group">
+                        <input type="currentcity" class="form-control" id="currentcity" placeholder="Current City" data-ng-model="currentCity">
+                     </div>
+                     <hr class="partition">
+                     <span class="aboutHeader">Contact Information</span>
+                     <hr class="partition">
+                     <div class="form-group">
+                        <input type="email" class="form-control" id="email" placeholder="Email" data-ng-model="email">
+                     </div>
+                     <div class="form-group">
+                        <input type="phone" class="form-control" id="phone" placeholder="Phone" data-ng-model="phoneNumber">
+                     </div>
+                     <br>
+                     <br>
+                     <hr class="partition">
+                     <span class="aboutHeader">Work & Education</span><br>
+                     <hr class="partition">
+                     <div class="form-group">
+                        <input type="school" class="form-control" id="school" placeholder="School" data-ng-model="school">
+                     </div>
+                     <div class="form-group">
+                        <input type="undergrad" class="form-control" id="undergrad" placeholder="College" data-ng-model="undergradCollege">
+                     </div>
+                     <div class="form-group">
+                        <input type="graduate" class="form-control" id="graduate" placeholder="Grad college" data-ng-model="gradCollege">
+                     </div>
+                     <br>
+                     <hr class="partition">
+                     <span class="aboutHeader">Life Events</span>
+                     <hr class="partition">
+                     <div class="form-group">
+                        <input type="relationship" class="form-control" id="relationship" placeholder="single/commited/complicated" data-ng-model="relationshipStatus">
+                     </div>
+                     <button type="submit" class="btn btn-success" data-ng-click="submit();">Submit</button>
+                     <button type="reset" class="btn btn-success" data-ng-click="reset();">Reset</button>
+                  </form>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-2">
+            <div class="sidebar" position:absolute>
+            <br><img src="/abcd1.png"></img>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
